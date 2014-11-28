@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    
+    <constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" /><!-- 动态方法调用应设为true -->
+
+	<!-- <package name="default" namespace="/" extends="struts-default">
+	     	<default-action-ref name="index"></default-action-ref>
+	    	<action name="index" >
+	            <result name="success">/index.jsp</result>
+	        </action>
+    </package> -->
+     
+    <!-- Add packages here -->
+	<include file="modeler.xml"></include>
+</struts>

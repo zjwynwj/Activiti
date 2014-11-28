@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans.xsd">  
+    <bean id="processEngineConfiguration"  
+        class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">  
+        <property name="databaseSchemaUpdate" value="true" />  
+  		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/activiti5?characterEncoding=utf-8" />  
+        <property name="jdbcDriver" value="com.mysql.jdbc.Driver" />  
+        <property name="jdbcUsername" value="root" />  
+        <property name="jdbcPassword" value="root" />  
+        <property name="jobExecutorActivate" value="true" />
+        <property name="xmlEncoding" value="utf-8" />
+        <property name="activityFontName" value="宋体"></property>
+        
+        
+        <property name="typedEventListeners">
+	      <map>
+	        <entry key="JOB_EXECUTION_SUCCESS,JOB_EXECUTION_FAILURE" >
+	          <list>
+	            <bean class="com.zt.activiti.listener.MyJobEventListener" />
+	          </list>
+	        </entry>
+	      </map>
+	    </property>  
+    </bean>  
+     <!--  
+    <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">  
+        <property name="databaseSchemaUpdate" value="true" />  
+        <property name="jdbcUrl" value="jdbc:oracle:thin:@192.108.119.45:1521:test" />  
+        <property name="jdbcDriver" value="oracle.jdbc.driver.OracleDriver" />  
+        <property name="jdbcUsername" value="username" />  
+        <property name="jdbcPassword" value="password" />  
+        <property name="jobExecutorActivate" value="true" />  
+    </bean>  
+    -->  
+</beans>  

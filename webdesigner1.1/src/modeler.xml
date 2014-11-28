@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="modeler" namespace="/modeler" extends="struts-default">
+
+		<action name="open" class="com.modeler.action.OpenAction" >
+        </action>
+        <action name="save" class="com.modeler.action.SaveAction" >
+        </action> 
+        <action name="deploy" class="com.modeler.action.DeployAction" >
+        </action>
+         <action name="delete" class="com.modeler.action.DeleteAction" >
+        </action>         
+    </package>
+
+</struts>
